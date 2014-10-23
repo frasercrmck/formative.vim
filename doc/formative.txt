@@ -1,0 +1,56 @@
+*formative.vim* - clang-format with text-objects
+
+Author: Fraser Cormack <frasercrmck@gmail.com>
+License: This file is placed in the public domain.
+
+==============================================================================
+INTRODUCTION                                                         *formative*
+
+This plugin expands the functionality of the default & suggested clang-format
+vim integration (http://clang.llvm.org/docs/ClangFormat.html#vim-integration)
+
+The main addition is the expanded use of |text-objects|. You can use `iB` and `a(`
+and all of your favourite text-objects. See |text-objects| or |object-select|
+for more examples.
+
+Example:
+    <C-K>2j           - clang-format 2 lines downwards
+    <C-K>iB           - clang-format inside the surrounding { } scope
+    <C-K>ap           - clang-format around the current |paragraph|
+    <C-K>k  (special) - clang-format the current line (quickly)
+
+See |g:fmtv_clang_format_line_key| for an explanation of the '<C-K>k' usage.
+
+==============================================================================
+OPTIONS                                                      *formative-options*
+
+                                                        *g:fmtv_clang_format_py*
+Specifies the path to the clang-format.py script on your system.
+Default: `~/.vim/clang-format.py`. Example: >
+    let g:fmtv_clang_format_py = /path/to/my/clang-format.py
+
+<                                                   *g:fmtv_clang_format_nor_key*
+Specifics the key to invoke clang-format in |normal| mode. Default: `'<C-k>'`.
+Example: >
+    let g:fmtv_clang_format_nor_key = '<leader>c'
+<                                                    *g:fmtv_clang_format_vis_key*
+Specifics the key to invoke clang-format in |visual| mode. Default: `'<C-k>'`.
+Example: >
+    let g:fmtv_clang_format_vis_key = '<leader>c'
+<                                                    *g:fmtv_clang_format_ins_key*
+Specifics the key to invoke clang-format in |insert| mode. Default: `'<C-k>'`.
+Example: >
+    let g:fmtv_clang_format_ins_key = '<leader>c'
+<                                                   *g:fmtv_clang_format_line_key*
+Specifics the key to invoke clang-format in |normal| mode on the current line.
+Intended to model the functionality of |c| -> |cc|, |d| -> |dd|, etc.
+Default: `'<C-k>k'`. Example: >
+    let g:fmtv_clang_format_line_key = '<leader>cc'
+<
+==============================================================================
+LICENSE                                                     *formative-license*
+
+This plugin is distributed under the same license as Vim iteself. See |license|
+for more information.
+
+vim:tw=78:fo=tcq2:ft=help:norl:
