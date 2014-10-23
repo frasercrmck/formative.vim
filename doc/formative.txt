@@ -1,4 +1,4 @@
-*formative.vim* - clang-format with text-objects
+*formative.vim* - ClangFormat with text-objects
 
 Author: Fraser Cormack <frasercrmck@gmail.com>
 License: This file is placed in the public domain.
