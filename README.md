@@ -5,6 +5,7 @@ Expands the functionality of the default & suggested clang-format [vim integrati
 The main advantage over the 'stock' vim integration is the use of text objects.
 
 Example:
+
     <C-K>2j - ClangFormat 2 lines downwards
     <C-K>iB - ClangFormat inside the surrounding { } scope
     <C-K>ap - ClangFormat around the current paragraph
