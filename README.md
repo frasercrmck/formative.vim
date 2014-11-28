@@ -10,7 +10,7 @@ Example:
     <C-K>iB - ClangFormat inside the surrounding { } scope
     <C-K>ap - ClangFormat around the current paragraph
 
-<C-K> is the default 'leader' key in this plugin. It can be customized: see below.
+\<C-K> is the default 'leader' key in this plugin. It can be customized: see below.
 
 A 'quick' ClangFormat binding is provided via `g:fmtv_clang_format_line_key`. This works on the current line alone. Its default mapping is `<C-K>k`, which is designed to emulate vim's `c -> cc`, `d -> dd` line-wise operations.
 
