@@ -14,6 +14,10 @@ Example:
 
 A 'quick' ClangFormat binding is provided via `g:fmtv_clang_format_line_key`. This works on the current line alone. Its default mapping is `<C-K>k`, which is designed to emulate vim's `c -> cc`, `d -> dd` line-wise operations.
 
+For the visual learners amongst you, here's a very web-2.0 GIF:
+
+![](https://cloud.githubusercontent.com/assets/1158422/5235521/00c36298-77fc-11e4-88f7-e23735c08e0e.gif)
+
 ## Installation
 
 If you use [Vundle](https://github.com/gmarik/Vundle.vim), add these lines to your `.vimrc`:
