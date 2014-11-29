@@ -1,6 +1,6 @@
 " formative.vim - ClangFormat with text-objects
 " Author: Fraser Cormack <frasercrmck@gmail.com>
-" Version: 1.0
+" Version: 1.1
 " License: This file is placed in the public domain.
 " Source repository: https://github.com/frasercrmck/formative.vim
 
@@ -28,5 +28,5 @@ execute "vnoremap <silent> " . g:fmtv_clang_format_vis_key .
       \ " :<C-U>call formative#ClangFormat(visualmode(), 1)<CR>"
 
 execute "inoremap <silent> " . g:fmtv_clang_format_ins_key .
-      \ "<ESC>:execute 'pyf ' . g:fmtv_clang_format_py<CR>i"
+      \ " <ESC>:execute 'pyf ' . g:fmtv_clang_format_py<CR>i"
 
