@@ -1,6 +1,6 @@
 " formative.vim - ClangFormat with text-objects
 " Author: Fraser Cormack <frasercrmck@gmail.com>
-" Version: 1.1
+" Version: 1.2
 " License: This file is placed in the public domain.
 " Source repository: https://github.com/frasercrmck/formative.vim
 
@@ -22,11 +22,11 @@ let g:fmtv_clang_format_line_key = get( g:, 'fmtv_clang_format_line_key', '<C-k>
 execute "nnoremap <silent> " . g:fmtv_clang_format_nor_key .
       \ " :<C-U>set opfunc=formative#ClangFormat<CR>g@"
 execute "nnoremap <silent> " . g:fmtv_clang_format_line_key .
-      \ " :execute 'pyf ' . g:fmtv_clang_format_py<CR>"
+      \ " :<C-U>call formative#ClangFormat('oneline')<CR>"
 
 execute "vnoremap <silent> " . g:fmtv_clang_format_vis_key .
       \ " :<C-U>call formative#ClangFormat(visualmode(), 1)<CR>"
 
 execute "inoremap <silent> " . g:fmtv_clang_format_ins_key .
-      \ " <ESC>:execute 'pyf ' . g:fmtv_clang_format_py<CR>i"
+      \ " <ESC>:<C-U>call formative#ClangFormat('oneline')<CR>i"
 
