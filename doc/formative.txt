@@ -34,24 +34,24 @@ Default: `~/.vim/clang-format.py`. Example: >
     let g:fmtv_clang_format_py = /path/to/my/clang-format.py
 
 <                                                   *g:fmtv_clang_format_nor_key*
-Specifics the key to invoke clang-format in |normal| mode. Default: `'<C-k>'`.
+Specifies the key to invoke clang-format in |normal| mode. Default: `'<C-k>'`.
 Example: >
     let g:fmtv_clang_format_nor_key = '<leader>c'
 <                                                    *g:fmtv_clang_format_vis_key*
-Specifics the key to invoke clang-format in |visual| mode. Default: `'<C-k>'`.
+Specifies the key to invoke clang-format in |visual| mode. Default: `'<C-k>'`.
 Example: >
     let g:fmtv_clang_format_vis_key = '<leader>c'
 <                                                    *g:fmtv_clang_format_ins_key*
-Specifics the key to invoke clang-format in |insert| mode. Default: `'<C-k>'`.
+Specifies the key to invoke clang-format in |insert| mode. Default: `'<C-k>'`.
 Example: >
     let g:fmtv_clang_format_ins_key = '<leader>c'
 <                                                   *g:fmtv_clang_format_line_key*
-Specifics the key to invoke clang-format in |normal| mode on the current line.
+Specifies the key to invoke clang-format in |normal| mode on the current line.
 Intended to model the functionality of |c| -> |cc|, |d| -> |dd|, etc.
 Default: `'<C-k>k'`. Example: >
     let g:fmtv_clang_format_line_key = '<leader>cc'
 <                                                   *g:fmtv_clang_format_file_key*
-Specifics the key to invoke clang-format in |normal| mode on the current file.
+Specifies the key to invoke clang-format in |normal| mode on the current file.
 Default: `'<C-k>u'`. Example: >
     let g:fmtv_clang_format_file_key = '<leader>d'
 <
