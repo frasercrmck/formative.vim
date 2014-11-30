@@ -1,6 +1,6 @@
 " formative.vim - ClangFormat with text-objects
 " Author: Fraser Cormack <frasercrmck@gmail.com>
-" Version: 1.2
+" Version: 1.3
 " License: This file is placed in the public domain.
 " Source repository: https://github.com/frasercrmck/formative.vim
 
@@ -18,6 +18,9 @@ function! formative#ClangFormat(type, ...)
   if a:0                     " Invoked from Visual mode
     let s:beg = "'<"
     let s:end = "'>"
+  elseif a:type == 'file'    " Invoked on the whole file
+    let s:beg = "1"
+    let s:end = "$"
   elseif a:type == 'oneline' " Invoked on one line only
     let s:beg = "."
     let s:end = "."

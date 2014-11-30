@@ -13,11 +13,15 @@ The main addition is the expanded use of |text-objects|. You can use `iB` and `a
 and all of your favourite text-objects. See |text-objects| or |object-select|
 for more examples.
 
+There are also special shortcuts for either formatting the current line or
+formatting the entire file in one go.
+
 Example:
     <C-K>2j           - clang-format 2 lines downwards
     <C-K>iB           - clang-format inside the surrounding { } scope
     <C-K>ap           - clang-format around the current |paragraph|
     <C-K>k  (special) - clang-format the current line (quickly)
+    <C-K>u  (special) - clang-format the whole file
 
 See |g:fmtv_clang_format_line_key| for an explanation of the '<C-K>k' usage.
 
@@ -46,6 +50,10 @@ Specifics the key to invoke clang-format in |normal| mode on the current line.
 Intended to model the functionality of |c| -> |cc|, |d| -> |dd|, etc.
 Default: `'<C-k>k'`. Example: >
     let g:fmtv_clang_format_line_key = '<leader>cc'
+<                                                   *g:fmtv_clang_format_file_key*
+Specifics the key to invoke clang-format in |normal| mode on the current file.
+Default: `'<C-k>u'`. Example: >
+    let g:fmtv_clang_format_file_key = '<leader>d'
 <
 ==============================================================================
 LICENSE                                                     *formative-license*
