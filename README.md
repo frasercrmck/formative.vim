@@ -6,13 +6,22 @@ The main advantage over the 'stock' vim integration is the use of text objects.
 
 Example:
 
-    <C-K>2j - ClangFormat 2 lines downwards
-    <C-K>iB - ClangFormat inside the surrounding { } scope
-    <C-K>ap - ClangFormat around the current paragraph
+    <C-K>2j   - ClangFormat 2 lines downwards
+    <C-K>iB   - ClangFormat inside the surrounding { } scope
+    <C-K>ap   - ClangFormat around the current paragraph
+    <C-K>/foo - ClangFormat from the current line until the first match of 'foo'
 
-\<C-K> is the default 'leader' key in this plugin. It can be customized: see below.
+#### Key Bindings
+
+\<C-K> is the default 'leader' key in this plugin. Follow this key with whichever motion or text object you like, as in the examples above. It can be customised: see below.
+
+#### Special Bindings
 
 A 'quick' ClangFormat binding is provided via `g:fmtv_clang_format_line_key`. This works on the current line alone. Its default mapping is `<C-K>k`, which is designed to emulate vim's `c -> cc`, `d -> dd` line-wise operations.
+
+There's also a binding for invoking clang-format on the entirety of the current file, and is great for doing a lot of formatting in one go. Its default mapping is `<C-K>u`, and is modified by setting `g:fmtv_clang_format_file_key` to your own preferred key combination.
+
+#### Demonstration
 
 For the visual learners amongst you, here's a very web-2.0 GIF:
 
@@ -36,7 +45,7 @@ Don't forget to update the help with: `:helptags`
 
 You will probably need to override the default path to your `clang-format.py` script. In your `.vimrc`, add the following line:
 
-    let g:fmtv_clang_format_py = /path/to/my/clang-format.py
+    let g:fmtv_clang_format_py = '/path/to/my/clang-format.py'
 
 You can remove or override the default key bindings, too. Any of the following examples can be added to your `.vimrc`.
 
@@ -44,5 +53,6 @@ You can remove or override the default key bindings, too. Any of the following e
     let g:fmtv_clang_format_vis_key  = MyKeyBinding 
     let g:fmtv_clang_format_ins_key  = MyKeyBinding 
     let g:fmtv_clang_format_line_key = MyKeyBinding 
+    let g:fmtv_clang_format_file_key = MyKeyBinding
 
 Note: please read the help by typing `:help formative` in vim for more information.
