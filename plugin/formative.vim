@@ -31,5 +31,5 @@ execute "vnoremap <silent> " . g:fmtv_clang_format_vis_key .
       \ " :<C-U>call formative#ClangFormat(visualmode(), 1)<CR>"
 
 execute "inoremap <silent> " . g:fmtv_clang_format_ins_key .
-      \ " <ESC>:<C-U>call formative#ClangFormat('oneline')<CR>i"
+      \ " <ESC>:<C-U>call formative#ClangFormat('oneline')<CR>a"
 
