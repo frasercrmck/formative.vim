@@ -23,20 +23,31 @@ There's also a binding for invoking clang-format on the entirety of the current 
 
 #### Demonstration
 
-For the visual learners amongst you, here's a very web-2.0 GIF:
+For the visual learners amongst you, here's an oh-so web-2.0 GIF:
 
 ![](https://cloud.githubusercontent.com/assets/1158422/5235521/00c36298-77fc-11e4-88f7-e23735c08e0e.gif)
 
 ## Installation
 
-If you use [Vundle](https://github.com/gmarik/Vundle.vim), add these lines to your `.vimrc`:
+### [vim-plug](https://github.com/junegunn/vim-plug)
+
+Add the following to your `.vimrc`:
+
+    Plug 'frasercrmck/formative.vim'
+
+
+### [Vundle](https://github.com/gmarik/Vundle.vim)
+
+Add the following lines to your `.vimrc`:
 
     Plugin 'frasercrmck/formative.vim'
 Then type the following in vim:
 
     :PluginInstall
 
-If you use [pathogen](https://github.com/tpope/vim-pathogen), then issue the following commands:
+### [pathogen](https://github.com/tpope/vim-pathogen)
+
+Issue the following commands:
 
     cd ~/.vim/bundle && git clone git://github.com/frasercrmck/formative.vim.git
 Don't forget to update the help with: `:helptags`
