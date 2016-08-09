@@ -11,6 +11,12 @@ endif
 
 let s:cpo_save = &cpo
 set cpo&vim
+
+if !has("python3")
+  let s:python_cmd = "pyf "
+else
+  let s:python_cmd = "py3f "
+endif
 " }}}
 
 " Functions {{{
@@ -30,7 +36,7 @@ function! formative#ClangFormat(type, ...)
   endif
 
   " Now do the formatting between the two markers
-  silent execute "normal! :".s:beg.",".s:end . "pyf ".g:fmtv_clang_format_py."\<CR>"
+  silent execute "normal! :".s:beg.",".s:end . s:python_cmd . g:fmtv_clang_format_py."\<CR>"
 endfunction
 " }}}
 
