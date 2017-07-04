@@ -21,9 +21,14 @@ A 'quick' ClangFormat binding is provided via `g:fmtv_clang_format_line_key`. Th
 
 There's also a binding for invoking clang-format on the entirety of the current file, and is great for doing a lot of formatting in one go. Its default mapping is `<C-K>u`, and is modified by setting `g:fmtv_clang_format_file_key` to your own preferred key combination.
 
+In summary, here are the additional, special, reconfigurable bindings:
+
+    <C-K>k - ClangFormat the current line
+    <C-K>u - ClangFormat the entire file
+
 #### Demonstration
 
-For the visual learners amongst you, here's an oh-so web-2.0 GIF:
+For the visual learners amongst you, here's an oh-so-web-2.0 GIF:
 
 ![](https://cloud.githubusercontent.com/assets/1158422/5235521/00c36298-77fc-11e4-88f7-e23735c08e0e.gif)
 
