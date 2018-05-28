@@ -34,12 +34,18 @@ For the visual learners amongst you, here's an oh-so-web-2.0 GIF:
 
 ## Installation
 
+### Vim Native
+
+Issue the following commands when using Vim 8+:
+
+    mkdir -p ~/.vim/pack/git-pack/start
+    git clone git://github.com/frasercrmck/formative.vim.git -- ~/.vim/pack/git-pack/start/formative.vim
+
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 Add the following to your `.vimrc`:
 
     Plug 'frasercrmck/formative.vim'
-
 
 ### [Vundle](https://github.com/gmarik/Vundle.vim)
 
