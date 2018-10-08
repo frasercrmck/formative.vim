@@ -23,7 +23,7 @@ Example:
     <C-K>k  (special) - clang-format the current line (quickly)
     <C-K>u  (special) - clang-format the whole file
 
-See |g:fmtv_clang_format_line_key| for an explanation of the '<C-K>k' usage.
+See |FormativeLine| for an explanation of the '<C-K>k' usage.
 
 ==============================================================================
 OPTIONS                                                      *formative-options*
@@ -31,29 +31,34 @@ OPTIONS                                                      *formative-options*
                                                         *g:fmtv_clang_format_py*
 Specifies the path to the clang-format.py script on your system.
 Default: `~/.vim/clang-format.py`. Example: >
-    let g:fmtv_clang_format_py = /path/to/my/clang-format.py
-
-<                                                   *g:fmtv_clang_format_nor_key*
-Specifies the key to invoke clang-format in |normal| mode. Default: `'<C-k>'`.
+    let g:fmtv_clang_format_py = '/path/to/my/clang-format.py'
+<
+                                                            *g:fmtv_no_mappings*
+Disables all default plugin mappings, individually documented below. Useful if
+the defaults (typically using <C-k>) would overwrite your own mappings.
 Example: >
-    let g:fmtv_clang_format_nor_key = '<leader>c'
-<                                                    *g:fmtv_clang_format_vis_key*
-Specifies the key to invoke clang-format in |visual| mode. Default: `'<C-k>'`.
+    let g:fmtv_no_mappings = 1
+<                                                               *FormativeNor*
+Invokes clang-format in |normal| mode. Default: `'<C-k>'`.
 Example: >
-    let g:fmtv_clang_format_vis_key = '<leader>c'
-<                                                    *g:fmtv_clang_format_ins_key*
-Specifies the key to invoke clang-format in |insert| mode. Default: `'<C-k>'`.
+    nmap <leader>c <Plug>FormativeNor
+<                                                               *FormativeVis*
+Invoke clang-format in |visual| mode. Default: `'<C-k>'`.
 Example: >
-    let g:fmtv_clang_format_ins_key = '<leader>c'
-<                                                   *g:fmtv_clang_format_line_key*
-Specifies the key to invoke clang-format in |normal| mode on the current line.
+    vmap <leader>c <Plug>FormativeVis
+<                                                               *FormativeIns*
+Invoke clang-format in |insert| mode. Default: `'<C-k>'`.
+Example: >
+    imap <leader>c <Plug>FormativeIns
+<                                                               *FormativeLine*
+Invokes clang-format in |normal| mode on the current line.
 Intended to model the functionality of |c| -> |cc|, |d| -> |dd|, etc.
 Default: `'<C-k>k'`. Example: >
-    let g:fmtv_clang_format_line_key = '<leader>cc'
-<                                                   *g:fmtv_clang_format_file_key*
-Specifies the key to invoke clang-format in |normal| mode on the current file.
+    nmap <leader>cc <Plug>FormativeLine
+<                                                               *FormativeFile*
+Invokes clang-format in |normal| mode on the current file.
 Default: `'<C-k>u'`. Example: >
-    let g:fmtv_clang_format_file_key = '<leader>d'
+    nmap <leader>d <Plug>FormativeFile
 <
 ==============================================================================
 LICENSE                                                     *formative-license*

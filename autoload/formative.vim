@@ -1,6 +1,6 @@
 " formative.vim - ClangFormat with text-objects
 " Author: Fraser Cormack <frasercrmck@gmail.com>
-" Version: 1.3
+" Version: 2.0
 " License: This file is placed in the public domain.
 " Source repository: https://github.com/frasercrmck/formative.vim
 
