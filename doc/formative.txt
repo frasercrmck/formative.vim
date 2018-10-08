@@ -58,7 +58,7 @@ Default: `'<C-k>u'`. Example: >
 ==============================================================================
 LICENSE                                                     *formative-license*
 
-This plugin is distributed under the same license as Vim iteself. See |license|
+This plugin is distributed under the same license as Vim itself. See |license|
 for more information.
 
 vim:tw=78:fo=tcq2:ft=help:norl:
