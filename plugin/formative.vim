@@ -1,6 +1,6 @@
 " formative.vim - ClangFormat with text-objects
 " Author: Fraser Cormack <frasercrmck@gmail.com>
-" Version: 1.3
+" Version: 2.0
 " License: This file is placed in the public domain.
 " Source repository: https://github.com/frasercrmck/formative.vim
 
@@ -14,22 +14,18 @@ let g:loaded_formative = 1
 
 let g:fmtv_clang_format_py = get( g:, 'fmtv_clang_format_py', '~/.vim/clang-format.py')
 
-let g:fmtv_clang_format_nor_key  = get( g:, 'fmtv_clang_format_nor_key', '<C-k>')
-let g:fmtv_clang_format_vis_key  = get( g:, 'fmtv_clang_format_vis_key', '<C-k>')
-let g:fmtv_clang_format_ins_key  = get( g:, 'fmtv_clang_format_ins_key', '<C-k>')
-let g:fmtv_clang_format_line_key = get( g:, 'fmtv_clang_format_line_key', '<C-k>k')
-let g:fmtv_clang_format_file_key = get( g:, 'fmtv_clang_format_file_key', '<C-k>u')
+nnoremap <silent> <Plug>FormativeNor :<C-U>set opfunc=formative#ClangFormat<CR>g@
+nnoremap <silent> <Plug>FormativeLine :<C-U>call formative#ClangFormat('oneline')<CR>
+nnoremap <silent> <Plug>FormativeFile :<C-U>call formative#ClangFormat('file')<CR>
 
-execute "nnoremap <silent> " . g:fmtv_clang_format_nor_key .
-      \ " :<C-U>set opfunc=formative#ClangFormat<CR>g@"
-execute "nnoremap <silent> " . g:fmtv_clang_format_line_key .
-      \ " :<C-U>call formative#ClangFormat('oneline')<CR>"
-execute "nnoremap <silent> " . g:fmtv_clang_format_file_key .
-      \ " :<C-U>call formative#ClangFormat('file')<CR>"
+vnoremap <silent> <Plug>FormativeVis :<C-U>call formative#ClangFormat(visualmode(), 1)<CR>
+inoremap <silent> <Plug>FormativeIns <ESC>:<C-U>call formative#ClangFormat('oneline')<CR>a
 
-execute "vnoremap <silent> " . g:fmtv_clang_format_vis_key .
-      \ " :<C-U>call formative#ClangFormat(visualmode(), 1)<CR>"
+if !exists("g:fmtv_no_mappings") || ! g:fmtv_no_mappings
+  nmap <C-k> <Plug>FormativeNor
+  vmap <C-k> <Plug>FormativeVis
+  imap <C-k> <Plug>FormativeIns
 
-execute "inoremap <silent> " . g:fmtv_clang_format_ins_key .
-      \ " <ESC>:<C-U>call formative#ClangFormat('oneline')<CR>a"
-
+  nmap <C-k>k <Plug>FormativeLine
+  nmap <C-k>u <Plug>FormativeFile
+endif
