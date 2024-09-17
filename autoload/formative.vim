@@ -21,16 +21,19 @@ endif
 
 " Functions {{{
 function! formative#ClangFormat(type, ...)
-  if a:0                     " Invoked from Visual mode
+  if a:0                        " Invoked from Visual mode
     let s:beg = "'<"
     let s:end = "'>"
-  elseif a:type == 'file'    " Invoked on the whole file
+  elseif a:type == 'file'       " Invoked on the whole file
     let s:beg = "1"
     let s:end = "$"
-  elseif a:type == 'oneline' " Invoked on one line only
+  elseif a:type == 'oneline'    " Invoked on one line only
     let s:beg = "."
     let s:end = "."
-  else                       " Invoked from Normal mode
+  elseif a:type == 'formatexpr' " Invoked by formatexpr
+    let s:beg = v:lnum
+    let s:end = v:lnum + v:count - 1
+  else                          " Invoked from Normal mode
     let s:beg = "'["
     let s:end = "']"
   endif

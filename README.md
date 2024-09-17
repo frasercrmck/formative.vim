@@ -15,6 +15,10 @@ Example:
 
 \<C-K> is the default 'leader' key in this plugin. Follow this key with whichever motion or text object you like, as in the examples above. It can be customised: see below.
 
+ClangFormat can also be made to work with vim's built-in `formatexpr`, allowing `gq` to work as normal.
+
+    setlocal formatexpr=formative#ClangFormat('formatexpr')
+
 #### Special Bindings
 
 A 'quick' ClangFormat binding is provided via `<Plug>FormativeLine`. This works on the current line alone. Its default mapping is `<C-K>k`, which is designed to emulate vim's `c -> cc`, `d -> dd` line-wise operations.
